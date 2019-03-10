@@ -103,7 +103,7 @@ Note: This style is also injected as fallback within the `<noscript>` element in
 
 ## Support
 
-The Polyfill enable `<link rel="preload"> support (e.g. for stylesheets) in browser (e.g. Firefox or IE11) which currently not support this `<link>` attribute.
+The Polyfill enable `<link rel="preload">` support (e.g. for stylesheets) in browser (e.g. Firefox or IE11) which currently not support this `<link>` attribute.
 
 Tested with MSIE 11, Edge 17, Firefox 60 and Chrome 72.
 
