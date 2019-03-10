@@ -8,8 +8,9 @@ A `<link rel="preload">` Polyfill. Call the onload event, also in unsupported Br
 
 ## Usage
 
+[![npm][npm]][npm-url]
 ```console
-npm install js.polyfill.preload.onload
+npm install --save js.polyfill.preload.onload
 ```
 
 ### Module (src)
@@ -120,3 +121,5 @@ https://api.codeclimate.com/v1/badges/463068933abaf66a335e/test_coverage
 [coverage-url]:
 https://codeclimate.com/github/exiguus/js.polyfill.preload.onload/test_coverage
 
+[npm]: https://img.shields.io/npm/v/js.polyfill.preload.onload.svg
+[npm-url]: https://npmjs.com/package/js.polyfill.preload.onload
