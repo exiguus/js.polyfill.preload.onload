@@ -33,7 +33,6 @@
     "istanbul-instrumenter-loader": "^3.0.1",
     "jasmine-core": "^3.1.0",
     "jit-grunt": "^0.10.0",
-    "jquery": "^3.3.1",
     "jsdoc": "^3.5.5",
     "karma": "^2.0.2",
     "karma-coverage": "^1.1.2",
@@ -75,7 +74,6 @@
     "link",
     "polyfill"
   ],
-
   "main": "src/js/Preload.class.js",
   "author": "Simon Gattner <npm@0x38.de>",
   "license": "MIT",
