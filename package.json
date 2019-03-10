@@ -79,6 +79,7 @@
   "main": "src/js/Preload.class.js",
   "author": "Simon Gattner <npm@0x38.de>",
   "license": "MIT",
+  "homepage": "https://exiguus.github.io/js.polyfill.preload.onload/",
   "repository": {
     "type": "git",
     "url": "https://github.com/exiguus/js.polyfill.preload.onload.git"
