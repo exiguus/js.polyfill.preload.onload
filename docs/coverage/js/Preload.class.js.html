@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for js/Support.class.js</title>
+    <title>Code coverage report for js/Preload.class.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -16,18 +16,18 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../index.html">all files</a> / <a href="index.html">js/</a> Support.class.js
+      <a href="../index.html">all files</a> / <a href="index.html">js/</a> Preload.class.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>8/8</span>
+        <span class='fraction'>14/14</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">66.67% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>4/4</span>
+        <span class='fraction'>4/6</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>8/8</span>
+        <span class='fraction'>13/13</span>
       </div>
     </div>
   </div>
@@ -82,7 +82,12 @@
 37
 38
 39
-40</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+40
+41
+42
+43
+44
+45</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -98,8 +103,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">20×</span>
-<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">10×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -108,65 +112,76 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">11×</span>
-<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4×</span>
 <span class="cline-any cline-yes">4×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
- * @fileOverview Support Class.
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Support from './Support.class';
+/**
+ * @fileOverview Preload Class.
  * @author Simon Gattner &lt;npm@0x38.de&gt;
  * @license MIT
  * @version 1.0.0
- * @module {es6} Support
+ * @module {es6} Preload
+ * @requires Support
  */
-export default class Support {
+export default class Preload extends Support {
     /**
-     * Support check.
-     * @class Support
-     * @classdesc Class to check a Support.
-     * @param {string} type to check.
-     * @param {object} list to check against.
+     * Check and upgrade preload support.
+     * @class Preload
+     * @classdesc Class to check and upgrade preload onload support.
      */
-    constructor(type, list) {
-        this.type = type;
-        this.list = list;
+    constructor() {
+        super(document.createElement('link').relList, 'preload');
     }
 &nbsp;
     /**
-     * Check Support of type against a list
-     * @function Support.check
-     * @return {boolean}
+     * Update &lt;link&gt; rel=preload elements and execute onload attr.
+     * @function Preload.update
+     * @return {boolean}.updateSupport
      */
-    check() {
-        if (!this.list || !this.list.supports) {
-            return false;
+    update() {
+        const links = document.getElementsByTagName('link');
+        for (let i = 0; i &lt; links.length; i++) {
+            const link = links[i];
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (link.rel === 'preload') {
+                const as = link.getAttribute('as');
+                const onload = (typeof link.onload === 'function');
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (onload) link.onload();
+                switch (true) {
+                    case as === 'style':
+                        link.setAttribute('rel', 'stylesheet');
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
-        try {
-            return this.list.supports(this.type);
-        } catch (event) {
-            // eslint-disable-next-line no-console
-            console.log('Support.check: error', event);
-        }
-        return false;
+        return true;
     }
 }
-&nbsp;
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Mar 10 2019 23:41:43 GMT+0100 (Central European Standard Time)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Mar 11 2019 00:22:10 GMT+0100 (Central European Standard Time)
 </div>
 </div>
 <script src="../prettify.js"></script>

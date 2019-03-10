@@ -107,6 +107,11 @@ The Polyfill enable `<link rel="preload">` support (e.g. for stylesheets) in bro
 
 Tested with MSIE 11, Edge 17, Firefox 60 and Chrome 72.
 
+## Documentation
+
+* [jsDoc](https://exiguus.github.io/js.polyfill.preload.onload/)
+* [Coverage](https://exiguus.github.io/js.polyfill.preload.onload/coverage/)
+
 
 [tests]: https://img.shields.io/travis/exiguus/js.polyfill.preload.onload/master.svg
 [tests-url]: https://travis-ci.org/exiguus/js.polyfill.preload.onload
