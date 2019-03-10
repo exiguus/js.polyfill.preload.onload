@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Preload Onload Polyfill</title>
+        <style type="text/css">
+          body {
+              font-family: Arial, "Open Sans", sans-serif;
+              font-size: 16px;
+              color: #012345;
+              background-color: #abcdef;
+              outline: 1em solid #012345;
+          }
+
+          header,
+          main {
+              display: block;
+              padding: 1em 2em;
+          }
+        </style>
+        <link
+          href="/src/css/style.css"
+          rel="preload"
+          as="style"
+          onload='this.rel="stylesheet"'
+          type="text/css">
+        <noscript>
+          <link rel="stylesheet" href="/src/css/style.css" type="text/css">
+        </noscript>
+    </head>
+    <body>
+        <header>
+          <h1>Preload Onload Polyfill</h1>
+          <h2>A <code>&lt;link rel=&quot;preload&quot;&gt;</code> Polyfill. Call the onload event, also in unsupported Browser.</h2>
+        </header>
+
+        <main>
+          <article>
+            <h2>Example:</h2>
+            <h3>Inline (critical) Style</h3>
+<pre>
+  <code>
+    body {
+      font-family: Arial, "Open Sans", sans-serif;
+      font-size: 16px;
+      color: #012345;
+      background-color: #abcdef;
+      outline: 1em solid #012345;
+    }
+
+    header,
+    main {
+        display: block;
+        padding: 1em 2em;
+    }
+  </code>
+</pre>
+            <h3>Injected preload style <code>css/style.css</code></h3>
+<pre>
+  <code>
+    &lt;link
+      href=&quot;/src/css/style.css&quot;
+      rel=&quot;preload&quot;
+      as=&quot;style&quot;
+      onload='this.rel=&quot;stylesheet&quot;'
+      type=&quot;text/css&quot;&gt;
+  </code>
+</pre>
+<pre>
+  <code>
+    body {
+      color: #abcdef;
+      background-color: #012345;
+      transition: all 4s ease-in;
+      outline: 1em solid #abcdef;
+    }
+
+    ...
+  </code>
+</pre>
+            <p>Note: this style is also injected as fallback within the <code>&lt;noscript&gt;</code> element.</p>
+<pre>
+  <code>
+      &lt;noscript&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;/src/css/style.css&quot; type=&quot;text/css&quot;&gt;
+      &lt;/noscript&gt;
+  </code>
+</pre>
+            <h2>Support</h2>
+            <p>The Polyfill enable <code>&gt;link rel=&quot;preload&quot;&lt;</code> support (e.g. for stylesheets) in browser (e.g. Firefox or IE11) which currently not support this <code>&lt;link&gt;</code> attribute.</p>
+            <p>Tested with MSIE 11, Edge 17, Firefox 60 and Chrome 72.</p>
+          </article>
+        </main>
+    </body>
+</html>
