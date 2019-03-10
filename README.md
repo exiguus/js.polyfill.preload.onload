@@ -111,12 +111,12 @@ Tested with MSIE 11, Edge 17, Firefox 60 and Chrome 72.
 [tests-url]: https://travis-ci.org/exiguus/js.polyfill.preload.onload
 
 [maintainability]:
-https://api.codeclimate.com/v1/badges/062e90f36125daa7d8ee/maintainability
+https://api.codeclimate.com/v1/badges/463068933abaf66a335e/maintainability
 [maintainability-url]:
 https://codeclimate.com/github/exiguus/js.polyfill.preload.onload/maintainability
 
 [coverage]:
-https://api.codeclimate.com/v1/badges/062e90f36125daa7d8ee/test_coverage
+https://api.codeclimate.com/v1/badges/463068933abaf66a335e/test_coverage
 [coverage-url]:
 https://codeclimate.com/github/exiguus/js.polyfill.preload.onload/test_coverage
 

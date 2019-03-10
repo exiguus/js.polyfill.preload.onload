@@ -11,6 +11,8 @@ exclude_patterns:
 - "*.md"
 - "LICENSE"
 - "package*"
+- "*.test.js"
+- "*.spec.js"
 plugins:
   eslint:
     enabled: true
