@@ -2,6 +2,7 @@ exclude_patterns:
 - "tests/"
 - "build/"
 - "coverage/"
+- "tests/"
 - "dist/"
 - "docs/"
 - "node_modules/"
@@ -10,7 +11,12 @@ exclude_patterns:
 - "*.md"
 - "LICENSE"
 - "package*"
-eslint:
-  enabled: true
-  config:
-    config: .eslintrc
+plugins:
+  eslint:
+    enabled: true
+    config:
+      config: .eslintrc
+  git-legal:
+    enabled: true
+
+
