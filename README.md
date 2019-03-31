@@ -9,11 +9,12 @@ A `<link rel="preload">` Polyfill. Call the onload event, also in unsupported Br
 ## Usage
 
 [![npm][npm]][npm-url]
+
 ```console
 npm install --save js.polyfill.preload.onload
 ```
 
-### Module (src)
+### ES Module
 
 ```javascript
 import Preload from 'js.polyfill.preload.onload';
@@ -23,9 +24,10 @@ preload.check() || preload.update();
 
 ```
 
-### Compiled (dist)
+### UMD Module
 
-Inject the Polyfill into `<head>` within a `<script>` element.
+Inject the Preload Onload Polyfill into `<head>` within a `<script>` element.
+The UMD Version of the Polyfill run check and update by default.
 
 ```html
 <head>
@@ -37,9 +39,21 @@ Inject the Polyfill into `<head>` within a `<script>` element.
         <link rel="stylesheet" href="css/style.css" type="text/css">
     </noscript>
     <script type="text/javascript">
-        /* Preload Onload Polyfill from dist directory */
+        /*
+         * Include Preload Onload Polyfill from dist directory
+         */
+       {{ includePreloadOnloadPolyfill() }}
     </script>
 </head>
+```
+
+```javascript
+function includePreloadOnloadPolyfill() {
+  const fs = require('fs');
+  const preloadOnloadPolyfill = fs.readFileSync('node_modules/js.polyfill.preload.onload/dist/preload.onload.polyfill.min.js');
+
+  return preloadOnloadPolyfill;
+}
 ```
 
 Note: The Polyfill should be injected inline to save the extra request.

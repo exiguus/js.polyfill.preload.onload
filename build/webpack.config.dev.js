@@ -20,6 +20,10 @@ module.exports = merge(webpackConfig, {
     port: 8090,
   },
 
+  entry: {
+    bundle: path.join(dirApp, 'index.js'),
+  },
+
   output: {
     pathinfo: true,
     publicPath: '/',

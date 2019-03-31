@@ -13,7 +13,7 @@ module.exports = {
       {
         expand: true,
         cwd: '<%= paths.dist %>',
-        src: ['<%= name.plugin %>.js', '<%= name.plugin %>.umd.js'],
+        src: ['<%= name.plugin %>.js'],
         dest: '<%= paths.dist %>',
         rename: function(dst, src) {
           // To keep the source js files and make new files as `*.min.js`:

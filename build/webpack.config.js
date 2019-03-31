@@ -8,12 +8,6 @@ const dirApp = path.join(__dirname, '../src');
  */
 module.exports = {
 
-  entry: {
-    // vendor: [
-    //   'lodash',
-    // ],
-    bundle: path.join(dirApp, 'index.js'),
-  },
   resolve: {
     modules: [
       dirNode,
